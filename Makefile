@@ -6,7 +6,7 @@
 #    By: pudry <pudry@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/27 09:01:54 by pudry             #+#    #+#              #
-#    Updated: 2024/09/11 14:14:52 by pudry            ###   ########.fr        #
+#    Updated: 2024/10/24 10:28:37 by pudry            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,11 @@ fclean : clean
 
 re : fclean all
 
+init:
+	git submodule init
+	git submodule update
+	make -C ft_printf
+
 objet/%.o: src/%.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(FLAGS) -c $< -o $@ $(INCLUDES)
@@ -81,4 +86,4 @@ header :
 
 
 
-.PHONY : fclean re all header clean cnt check leak
+.PHONY : fclean re all header clean cnt check leak init

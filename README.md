@@ -15,3 +15,4 @@ Using Unix signals, the client will send the string to the server, which will th
 - **`make clt`**: Compiles the client.
 - **`make srv`**: Compiles the server.
 - **`make header`**: Prints a decorative header.
+- **`make init`**: Init submodules
